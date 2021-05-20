@@ -15,21 +15,23 @@ Pod::Spec.new do |spec|
 
   spec.frameworks = "Cocoa", "Foundation"
 
-  spec.source_files  = "Sources/GraphViz/**/*.{h,swift,mm,m}", "GraphViz.h", "Sources/Clibgraphviz/*.h", "SWB/GraphViz/*"
-  spec.private_header_files = "Sources/Clibgraphviz/*.h"
+  spec.source_files  = "Sources/GraphViz/**/*.{h,swift,mm,m}", "GraphViz.h", "SWB/GraphViz/*"
+  # spec.source_files  = "Sources/GraphViz/**/*.{h,swift,mm,m}", "GraphViz.h", "Sources/Clibgraphviz/*.h", "SWB/GraphViz/*"
+  # spec.private_header_files = "Sources/Clibgraphviz/*.h"
   spec.module_map    = "graphviz.modulemap"
   
   spec.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
-    'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/GraphViz/Sources/Clibgraphviz ' +
-                             '$(SRCROOT)/../../Sources/Clibgraphviz',
-    'HEADER_SEARCH_PATHS' => '$(SRCROOT)/GraphViz/Sources/Clibgraphviz ' +
-                             '$(SRCROOT)/../../Sources/Clibgraphviz',
-    'LIBRARY_SEARCH_PATHS' => '$(SRCROOT)/../../Libraries/universal'
+    # 'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/GraphViz/Sources/Clibgraphviz ' +
+    #                          '$(SRCROOT)/../../Sources/Clibgraphviz',
+    # 'HEADER_SEARCH_PATHS' => '$(SRCROOT)/GraphViz/Sources/Clibgraphviz ' +
+    #                          '$(SRCROOT)/../../Sources/Clibgraphviz',
+    'LIBRARY_SEARCH_PATHS' =>  '${SRCROOT}/Frameworks ' +
+                               '$(SRCROOT)/../../Libraries/universal'
   }
 
   spec.vendored_libraries = 'Libraries/universal/*.dylib'
-  # spec.dependency "Clibgraphviz"
+  spec.dependency "Clibgraphviz"
 
   spec.resources = ["Libraries/universal/*.dylib", "Libraries/graphviz/config6"]
   spec.libraries = "cdt.5", "cgraph.6", "gvc.6"

@@ -1,16 +1,22 @@
 PODS:
-  - GraphViz (0.0.1)
+  - Clibgraphviz (0.0.1)
+  - GraphViz (0.0.1):
+    - Clibgraphviz
 
 DEPENDENCIES:
+  - Clibgraphviz (from `../`)
   - GraphViz (from `../`)
 
 EXTERNAL SOURCES:
+  Clibgraphviz:
+    :path: "../"
   GraphViz:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GraphViz: f91d4bbbb79ad11dc2723ce07122767e22c3162b
+  Clibgraphviz: 30ac74f8722c05d87d772f9cde99470b4ab431ff
+  GraphViz: 3773eb4160fdb794fe82ac10d22d922073562dfb
 
-PODFILE CHECKSUM: b7d8b6e0f80b0021ce2a7d8bde0b1d5bb320d178
+PODFILE CHECKSUM: 820309f1a07503fd6acd9423599361761808bcf9
 
 COCOAPODS: 1.10.1

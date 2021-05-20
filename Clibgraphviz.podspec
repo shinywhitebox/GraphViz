@@ -16,13 +16,14 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/shinywhitebox/GraphViz.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "Sources/Clibgraphviz/**/*.h", "SWB/Clibgraphviz/*"
-  spec.private_header_files = "Sources/Clibgraphviz/*.h"
+  # spec.private_header_files = "Sources/Clibgraphviz/*.h"
 
   spec.frameworks = "Cocoa", "Foundation"
 
   spec.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
   }
+
   # spec.library = 'c++'
   # spec.xcconfig = {
   #   'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
