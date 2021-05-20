@@ -6,29 +6,23 @@ Pod::Spec.new do |spec|
 
   spec.description  = <<-DESC
   Copy of GraphViz https://github.com/SwiftDocOrg/GraphViz 
-  This is here to shut up the "import Clibgraphviz". 
-  Actual headers are included (privately) in the GraphViz framework.
+  This is here to shut up the "import Clibgraphviz". It includes the .h files for graphviz.
+
+  Had to comment out the <inttpyes> include to make xcode happy. Seemed to work ok.
+
                    DESC
 
   spec.homepage     = "http://shinywhitebox.com/"
   spec.license      = "MIT"
-  spec.platform     = :osx, "10.15"
+  spec.platform     = :osx, "11.0"
   spec.source       = { :git => "https://github.com/shinywhitebox/GraphViz.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "Sources/Clibgraphviz/**/*.h", "SWB/Clibgraphviz/*"
-  # spec.private_header_files = "Sources/Clibgraphviz/*.h"
-
   spec.frameworks = "Cocoa", "Foundation"
 
   spec.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
   }
-
-  # spec.library = 'c++'
-  # spec.xcconfig = {
-  #   'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
-  #   'CLANG_CXX_LIBRARY' => 'libc++'
-  # }
 
   spec.xcconfig = {'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'}
 end
