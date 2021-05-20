@@ -25,6 +25,7 @@ Pod::Spec.new do |spec|
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
     'CLANG_CXX_LIBRARY' => 'libc++'
   }
+  spec.dependency "Clibgraphviz"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
