@@ -16,7 +16,7 @@ if [ "$ARCH" = "x86_64" ]; then
 fi
 
 # Various source folders; where the originals are at
-GV_INSTALL_FOLDER="${HOMEBREW_FOLDER}/Cellar/graphviz/2.47.1"
+GV_INSTALL_FOLDER="${HOMEBREW_FOLDER}/Cellar/graphviz/2.46.1"
 SRC_GZ_LIB_FOLDER="${GV_INSTALL_FOLDER}/lib"
 SRC_OTHER_LIBS_FOLDER="${HOMEBREW_FOLDER}/opt"
 
@@ -85,8 +85,12 @@ fix_lib_dependencies() {
         copy_lib_and_set_rpath "${other_lib}" "${SRC_OTHER_LIBS_FOLDER}" "${PROJECT_LIB_FOLDER}"
     done
 
-    copy_lib_and_set_rpath "libexpat.1.dylib" "${EXPAT_LIB_FOLDER}" "${PROJECT_LIB_FOLDER}"
-    copy_lib_and_set_rpath "libz.1.dylib" "${ZLIB_LIB_FOLDER}" "${PROJECT_LIB_FOLDER}"
+    if [ -d "${EXPAT_LIB_FOLDER} " ]; then
+      copy_lib_and_set_rpath "libexpat.1.dylib" "${EXPAT_LIB_FOLDER}" "${PROJECT_LIB_FOLDER}"
+    fi
+    if [ -d "${ZLIB_LIB_FOLDER}" ]; then
+      copy_lib_and_set_rpath "libz.1.dylib" "${ZLIB_LIB_FOLDER}" "${PROJECT_LIB_FOLDER}"
+    fi
 
     echo "Part2: Fixing rpaths..."
     change_rpath "${PROJECT_LIB_FOLDER}/libcgraph.6.dylib" "${SRC_GZ_LIB_FOLDER}/libcdt.5.dylib"
