@@ -1,0 +1,21 @@
+PODS:
+  - Clibgraphviz (0.0.1)
+  - GraphViz (0.0.1)
+
+DEPENDENCIES:
+  - Clibgraphviz (from `../`)
+  - GraphViz (from `../`)
+
+EXTERNAL SOURCES:
+  Clibgraphviz:
+    :path: "../"
+  GraphViz:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Clibgraphviz: 7a6ada2ef59db283270bd540ea8979bd04a5d2d9
+  GraphViz: 5649bfb69ae8c46c19bbe15ffed6e8e2f098936a
+
+PODFILE CHECKSUM: 820309f1a07503fd6acd9423599361761808bcf9
+
+COCOAPODS: 1.10.1
