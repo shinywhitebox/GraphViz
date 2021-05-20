@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
 
   spec.homepage     = "http://shinywhitebox.com/"
   spec.license      = "MIT"
-  spec.platform     = :osx, "11.0"
+  spec.platform     = :osx, "10.15"
   spec.source       = { :git => "https://github.com/shinywhitebox/GraphViz.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "Sources/Clibgraphviz/**/*.h", "SWB/Clibgraphviz/*"

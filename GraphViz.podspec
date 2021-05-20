@@ -6,12 +6,12 @@ Pod::Spec.new do |spec|
 
   spec.description  = <<-DESC
   Copy of GraphViz https://github.com/SwiftDocOrg/GraphViz to add a podspec.  
-  Includes dylibs for 11.0+ to make it all self contained.
+  Includes dylibs for 11.0+ to make it all self contained.  It's marked 10.15 so I can conditionally use it.
                    DESC
 
   spec.homepage     = "http://shinywhitebox.com/"
   spec.license      = "MIT"
-  spec.platform     = :osx, "11.00"
+  spec.platform     = :osx, "10.15"
   spec.source       = { :git => "https://github.com/shinywhitebox/GraphViz.git", :tag => "#{spec.version}" }
 
   spec.frameworks = "Cocoa", "Foundation"
