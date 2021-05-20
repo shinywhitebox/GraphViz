@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
 
   spec.frameworks = "Cocoa", "Foundation"
 
-  spec.source_files  = "Sources/GraphViz/**/*.{h,swift,mm,m}", "GraphViz.h", "Sources/Clibgraphviz/*.h", "SWB/*"
+  spec.source_files  = "Sources/GraphViz/**/*.{h,swift,mm,m}", "GraphViz.h", "Sources/Clibgraphviz/*.h", "SWB/GraphViz/*"
   spec.private_header_files = "Sources/Clibgraphviz/*.h"
   spec.module_map    = "graphviz.modulemap"
   
@@ -29,10 +29,8 @@ Pod::Spec.new do |spec|
   }
 
   spec.vendored_libraries = 'Libraries/universal/*.dylib'
-  spec.dependency "Clibgraphviz"
-
-
   # spec.dependency "Clibgraphviz"
+
   spec.resources = ["Libraries/universal/*.dylib", "Libraries/graphviz/config6"]
   spec.libraries = "cdt.5", "cgraph.6", "gvc.6"
   # spec.library = 'c++'
@@ -43,11 +41,6 @@ Pod::Spec.new do |spec|
     #  'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',     
   #  }
 
-  # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If your library depends on compiler flags you can set them in the xcconfig hash
-  #  where they will only apply to your library. If you depend on other Podspecs
-  #  you can include multiple dependencies to ensure it works.
 
   spec.xcconfig = {'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'}
 end

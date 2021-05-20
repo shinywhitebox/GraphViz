@@ -4,7 +4,7 @@ target 'SimpleExample' do
   use_frameworks!
 
   # Pods for GaphViz
-  pod "Clibgraphviz", :path => "../"
+  # pod "Clibgraphviz", :path => "../"
   pod "GraphViz", :path => "../"
 
 
