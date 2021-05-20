@@ -11,7 +11,6 @@ set -e
 
 HOMEBREW_FOLDER=/opt/homebrew
 if [ "$ARCH" = "x86_64" ]; then
-  echo "DO IT"
   HOMEBREW_FOLDER=/usr/local
 fi
 
@@ -20,11 +19,17 @@ GV_INSTALL_FOLDER="${HOMEBREW_FOLDER}/Cellar/graphviz/2.46.1"
 SRC_GZ_LIB_FOLDER="${GV_INSTALL_FOLDER}/lib"
 SRC_OTHER_LIBS_FOLDER="${HOMEBREW_FOLDER}/opt"
 
-EXPAT_INSTALL_FOLDER="${HOMEBREW_FOLDER}/Cellar/expat/2.3.0"
-EXPAT_LIB_FOLDER="${EXPAT_INSTALL_FOLDER}/lib"
+# For 10.15 Intel; it looks like libs in /usr/lib will work
+if [ "$ARCH" = "x86_64" ]; then
+  EXPAT_INSTALL_FOLDER="/usr/lib"
+  ZLIB_INSTALL_FOLDER="/usr/lib"
+else 
+  EXPAT_INSTALL_FOLDER="${HOMEBREW_FOLDER}/Cellar/expat/2.3.0/lib"
+  ZLIB_INSTALL_FOLDER="${HOMEBREW_FOLDER}/Cellar/zlib/1.2.11/lib"
+fi
 
-ZLIB_INSTALL_FOLDER="${HOMEBREW_FOLDER}/Cellar/zlib/1.2.11"
-ZLIB_LIB_FOLDER="${ZLIB_INSTALL_FOLDER}/lib"
+EXPAT_LIB_FOLDER="${EXPAT_INSTALL_FOLDER}"
+ZLIB_LIB_FOLDER="${ZLIB_INSTALL_FOLDER}"
 
 # Need to:
 # 1) copy the required libs, to a shared folder
@@ -85,7 +90,7 @@ fix_lib_dependencies() {
         copy_lib_and_set_rpath "${other_lib}" "${SRC_OTHER_LIBS_FOLDER}" "${PROJECT_LIB_FOLDER}"
     done
 
-    if [ -d "${EXPAT_LIB_FOLDER} " ]; then
+    if [ -d "${EXPAT_LIB_FOLDER}" ]; then
       copy_lib_and_set_rpath "libexpat.1.dylib" "${EXPAT_LIB_FOLDER}" "${PROJECT_LIB_FOLDER}"
     fi
     if [ -d "${ZLIB_LIB_FOLDER}" ]; then
