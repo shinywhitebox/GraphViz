@@ -29,6 +29,7 @@ Pod::Spec.new do |spec|
   }
 
   spec.vendored_libraries = 'Libraries/universal/*.dylib'
+  spec.dependency "Clibgraphviz"
 
 
   # spec.dependency "Clibgraphviz"
