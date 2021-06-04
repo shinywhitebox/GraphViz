@@ -19,6 +19,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "Sources/Clibgraphviz/*.h", "SWB/Clibgraphviz/*"
   spec.frameworks = "Cocoa", "Foundation"
+  spec.swift_versions = "5"
 
   spec.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',

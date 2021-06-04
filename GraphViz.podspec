@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "GraphViz"
-  spec.version      = "0.0.1"
+  spec.version      = "1.0.0"
   spec.authors      = "Neil Clayton"
   spec.summary      = "Copy of GraphViz https://github.com/SwiftDocOrg/GraphViz to add a podspec"
 
