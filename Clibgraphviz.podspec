@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "Clibgraphviz"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.authors      = "Neil Clayton"
   spec.summary      = "Copy of GraphViz https://github.com/SwiftDocOrg/GraphViz to add a podspec"
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   Copy of GraphViz https://github.com/SwiftDocOrg/GraphViz 
   This is here to shut up the "import Clibgraphviz". It includes the .h files for graphviz.
 
-  Had to comment out the <inttpyes> include to make xcode happy. Seemed to work ok.
+  Had to comment out the <inttpyes> include to make xcode (12) happy. Seemed to work ok.
 
                    DESC
 
