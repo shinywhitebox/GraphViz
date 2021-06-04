@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/shinywhitebox/GraphViz.git", :tag => "#{spec.version}" }
 
   spec.frameworks = "Cocoa", "Foundation"
-
+  spec.swift_versions = "5"
   spec.source_files  = "Sources/GraphViz/**/*.{h,swift,mm,m}", "GraphViz.h", "SWB/GraphViz/*"
   spec.module_map    = "graphviz.modulemap"
   
