@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :osx, "10.15"
   spec.source       = { :git => "https://github.com/shinywhitebox/GraphViz.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "Sources/Clibgraphviz/**/*.h", "SWB/Clibgraphviz/*"
+  spec.source_files  = "Sources/Clibgraphviz/*.h", "SWB/Clibgraphviz/*"
   spec.frameworks = "Cocoa", "Foundation"
 
   spec.pod_target_xcconfig = {
