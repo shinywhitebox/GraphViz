@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
 
   spec.homepage     = "http://shinywhitebox.com/"
   spec.license      = "MIT"
-  spec.platform     = :osx, "10.15"
+  spec.platform     = :osx, "11.00"
   spec.source       = { :git => "https://github.com/shinywhitebox/GraphViz.git", :tag => "#{spec.version}" }
 
   spec.frameworks = "Cocoa", "Foundation"
